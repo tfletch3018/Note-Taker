@@ -1,12 +1,12 @@
 [
     {
-    "title":"fff",
-    "text":"fff",
+    "title":"Hello",
+    "text":"I am a note",
     "id":1
 },
 {
-    "title":"Hello",
-    "text":"hello",
+    "title":"Hello again",
+    "text":"Hello, I am also a note",
     "id":2
 }
 ]
