@@ -104,7 +104,7 @@ deleteNote(note.id).then(function() {
   };
 
 
-  const renderNoteList = function() {
+  const renderNoteList = function(notes) {
     $noteList.empty();
 
     const noteListItems = [];
