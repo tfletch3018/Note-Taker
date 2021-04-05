@@ -8,6 +8,11 @@
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
+
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
