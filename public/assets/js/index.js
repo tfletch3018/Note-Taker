@@ -27,9 +27,9 @@ const saveNote = (note) => {
 //Delete a note
 const deleteNote = (id) => {
   return $.ajax({
-  url: `api/notes/${id}`,
-  method: 'DELETE',
-});
+    url: `api/notes/${id}`,
+    method: 'DELETE',
+  });
 };
 
 //If activeNote then display activeNote
@@ -54,76 +54,76 @@ const handleNoteSave = () => {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
-    };
-
-    saveNote(newNote).then((data) => {
-      getAndRenderNotes();
-      renderActiveNote();
-    });
   };
 
-  //delete a note
-  const handleNoteDelete = (event) => {
-
-event.stopPropagation();
-
-const note = $(this)
-.parent('.list-group-item')
-.data();
-
-if (activeNote.id === note.id) {
-  activeNote = {};
-}
-
-deleteNote(note.id).then(() => {
-  getAndRenderNotes()
-  renderActiveNote();
-});
-  };
-
-
-  const handleNoteView = () => {
-    activeNote = $(this).data();
+  saveNote(newNote).then((data) => {
+    getAndRenderNotes();
     renderActiveNote();
-  };
+  });
+};
 
+//delete a note
+const handleNoteDelete = (event) => {
 
-  const handleNewNoteView = () => {
+  event.stopPropagation();
+
+  const note = $(this)
+    .parent('.list-group-item')
+    .data();
+
+  if (activeNote.id === note.id) {
     activeNote = {};
+  }
+
+  deleteNote(note.id).then(() => {
+    getAndRenderNotes();
     renderActiveNote();
-  };
+  });
+};
+
+
+const handleNoteView = () => {
+  activeNote = $(this).data();
+  renderActiveNote();
+};
+
+
+const handleNewNoteView = () => {
+  activeNote = {};
+  renderActiveNote();
+};
 
 
 
-  const handleRenderSaveBtn = () => {
-    if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
-      $saveNoteBtn.hide();
-    } else {
-      $saveNoteBtn.show();
-    }
-  };
+const handleRenderSaveBtn = () => {
+  if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
+    $saveNoteBtn.hide();
+  } else {
+    $saveNoteBtn.show();
+  }
+};
 
 
-  const renderNoteList = (notes) => {
-    $noteList.empty();
+const renderNoteList = (notes) => {
+  $noteList.empty();
 
-    const noteListItems = [];
+  const noteListItems = [];
 
-    for (let i = 0; i < notes.length; i++) {
-      const note = notes[i];
+  for (let i = 0; i < notes.length; i++) {
+    const note = notes[i];
 
-      const $li = $("<li class='list-group-item'>").data(note);
-      const $span = $('<span>').text(note.title);
-      const $delBtn = $(
-        "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
-      );
+    const $li = $("<li class='list-group-item'>").data(note);
+    const $span = $('<span>').text(note.title);
+    const $delBtn = $(
+      "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
+    );
 
-      $li.append($span, $delBtn);
-      noteListItems.push($li);
-    }
+    $li.append($span, $delBtn);
+    noteListItems.push($li);
+  }
 
-    $noteList.append(noteListItems);
-  };
+  $noteList.append(noteListItems);
+};
 
 
 const getAndRenderNotes = () => {
