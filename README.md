@@ -6,7 +6,7 @@
 •The task was to create an application utilizing Express.js back end with the capability of saving and retreiving note data from a JSON file
 •Given the front end of the application already in tact, the goal was to build the back end and then connect the two
 •Finally, the finished app was then deployed to Heroku
-•This project highlighted several important concepts, PORT utilization, building front and end and back end separately as well as using Heroku to deploy a site were just a few take aways
+•This project highlighted several important concepts, PORT utilization, building front and back ends separately, as well as using Heroku to deploy a site were just a few take aways.
 ```
 
 ## User Story
