@@ -1,20 +1,23 @@
 # Note-Taker
 
 ## Description
--Note Taker is an application that may be used to create and then save notes
--The task was to create an application utilizing Express.js back end with the capability of saving and retreiving note data from a JSON file
--Given the front end of the application already in tact, the goal was to build the back end and then connect the two
--Finally, the finished app was then deployed to Heroku
--This project highlighted several important concepts, PORT utilization, building front and end and back end separately as well as using Heroku to deploy a site were just a few take aways
+```
+•Note Taker is an application that may be used to create and then save notes
+•The task was to create an application utilizing Express.js back end with the capability of saving and retreiving note data from a JSON file
+•Given the front end of the application already in tact, the goal was to build the back end and then connect the two
+•Finally, the finished app was then deployed to Heroku
+•This project highlighted several important concepts, PORT utilization, building front and end and back end separately as well as using Heroku to deploy a site were just a few take aways
+```
 
 ## User Story
-
 ```
 AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
+
 ## Acceptance Criteria
+```
 GIVEN a note-taking application
 WHEN I open the Note Taker
 THEN I am presented with a landing page with a link to a notes page
@@ -28,14 +31,16 @@ WHEN I click on an existing note in the list in the left-hand column
 THEN that note appears in the right-hand column
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+```
 
 ## Installation
--Open up your terminal of choice
--Visit this repo at Github/ select clone repo/ copy to clipboard
--git clone paste clipboard
--cd into the new repo
--installation completed!
-
+```
+•Open up your terminal of choice
+•Visit this repo at Github/ select clone repo/ copy to clipboard
+•git clone paste clipboard
+•cd into the new repo
+•installation completed!
+```
 ## Usage
 ![screenshot](public\assets\images\screenshot.png)
 
