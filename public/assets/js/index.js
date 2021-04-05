@@ -8,7 +8,7 @@ const $noteList = $('.list-container .list-group');
 let activeNote = {};
 
 //get notes from db
-const getNotes = function() {
+const getNotes = () => {
   return $.ajax({
     url: '/api/notes',
     method: 'GET',
@@ -16,7 +16,7 @@ const getNotes = function() {
 };
 
 //Save a note
-const saveNote = function(note) {
+const saveNote = (note) => {
   return $.ajax({
     url: '/api/notes',
     data: note,
@@ -25,7 +25,7 @@ const saveNote = function(note) {
 };
 
 //Delete a note
-const deleteNote = function(id) {
+const deleteNote = (id) => {
   return $.ajax({
   url: `api/notes/${id}`,
   method: 'DELETE',
@@ -33,7 +33,7 @@ const deleteNote = function(id) {
 };
 
 //If activeNote then display activeNote
-const renderActiveNote = function() {
+const renderActiveNote = () => {
   $saveNoteBtn.hide();
 
   if (activeNote.id) {
@@ -50,20 +50,20 @@ const renderActiveNote = function() {
 };
 
 //Get note data
-const handleNoteSave = function() {
+const handleNoteSave = () => {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
     };
 
-    saveNote(newNote).then(function(data) {
+    saveNote(newNote).then((data) => {
       getAndRenderNotes();
       renderActiveNote();
     });
   };
 
   //delete a note
-  const handleNoteDelete = function(event) {
+  const handleNoteDelete = (event) => {
 
 event.stopPropagation();
 
@@ -75,27 +75,27 @@ if (activeNote.id === note.id) {
   activeNote = {};
 }
 
-deleteNote(note.id).then(function() {
+deleteNote(note.id).then(() => {
   getAndRenderNotes()
   renderActiveNote();
 });
   };
 
 
-  const handleNoteView = function() {
+  const handleNoteView = () => {
     activeNote = $(this).data();
     renderActiveNote();
   };
 
 
-  const handleNewNoteView = function() {
+  const handleNewNoteView = () => {
     activeNote = {};
     renderActiveNote();
   };
 
 
 
-  const handleRenderSaveBtn = function() {
+  const handleRenderSaveBtn = () => {
     if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
       $saveNoteBtn.hide();
     } else {
@@ -104,7 +104,7 @@ deleteNote(note.id).then(function() {
   };
 
 
-  const renderNoteList = function(notes) {
+  const renderNoteList = (notes) => {
     $noteList.empty();
 
     const noteListItems = [];
@@ -126,8 +126,8 @@ deleteNote(note.id).then(function() {
   };
 
 
-const getAndRenderNotes = function() {
-  return getNotes().then(function(data) {
+const getAndRenderNotes = () => {
+  return getNotes().then((data) => {
     renderNoteList(data);
   });
 };
@@ -140,5 +140,5 @@ $noteTitle.on('keyup', handleRenderSaveBtn);
 $noteText.on('keyup', handleRenderSaveBtn);
 
 
-getAndRenderNotes()
+getAndRenderNotes();
 
