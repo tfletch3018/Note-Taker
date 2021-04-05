@@ -62,9 +62,8 @@ const handleNoteSave = () => {
   });
 };
 
-//delete a note
 const handleNoteDelete = (event) => {
-
+  
   event.stopPropagation();
 
   const note = $(this)
@@ -94,7 +93,6 @@ const handleNewNoteView = () => {
 };
 
 
-
 const handleRenderSaveBtn = () => {
   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
     $saveNoteBtn.hide();
@@ -102,7 +100,6 @@ const handleRenderSaveBtn = () => {
     $saveNoteBtn.show();
   }
 };
-
 
 const renderNoteList = (notes) => {
   $noteList.empty();
@@ -125,8 +122,7 @@ const renderNoteList = (notes) => {
   $noteList.append(noteListItems);
 };
 
-
-const getAndRenderNotes = () => {
+var getAndRenderNotes = () => {
   return getNotes().then((data) => {
     renderNoteList(data);
   });
@@ -139,6 +135,7 @@ $noteList.on('click', '.delete-note', handleNoteDelete);
 $noteTitle.on('keyup', handleRenderSaveBtn);
 $noteText.on('keyup', handleRenderSaveBtn);
 
-
+// Gets and renders the initial list of notes
 getAndRenderNotes();
+
 

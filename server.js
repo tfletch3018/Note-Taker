@@ -9,6 +9,6 @@ app.use(express.static("./public/"));
 require("./routes/apiRoute")(app);
 require("./routes/htmlRoute")(app);
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`);
 });

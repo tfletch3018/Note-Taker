@@ -1,9 +1,9 @@
 const fs = require("fs");
 const { parse } = require("path");
 
-module.exports = function(app) {
+module.exports =  (app) => {
 
-    app.get("/api/notes", function(req, res) {
+    app.get("/api/notes", (req, res) => {
         fs.readFile("./db/db.json", (err, data) => {
             if (err) throw err;
             noteData = JSON.parse(data);
@@ -12,7 +12,7 @@ module.exports = function(app) {
     });
 
 
-    app.post("/api/notes", function(req, res) {
+    app.post("/api/notes", (req, res) => {
         const userNotes = req.body;
 
         fs.readFile("./db/db.json", (err, data) => {
@@ -36,7 +36,7 @@ module.exports = function(app) {
         res.send("Thank you for using note-taker!");
     });
 
-    app.delete("/api/notes/:id", function(req, res) {
+    app.delete("/api/notes/:id", (req, res) => {
 
         const deleteNote = req.params.id;
         console.log(deleteNote);
