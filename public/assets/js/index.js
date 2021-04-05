@@ -4,9 +4,7 @@ const $saveNoteBtn = $('.save-note');
 const $newNoteBtn = $('.new-note');
 const $noteList = $('.list-container .list-group');
 
-
 let activeNote = {};
-
 
 const getNotes = () => {
   return $.ajax({
@@ -29,7 +27,6 @@ const deleteNote = (id) => {
     method: 'DELETE',
   });
 };
-
 
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
@@ -59,18 +56,14 @@ const handleNoteSave = () => {
   });
 };
 
-
 const handleNoteDelete = function(event) {
   event.stopPropagation();
-
   const note = $(this)
     .parent('.list-group-item')
     .data();
-
   if (activeNote.id === note.id) {
     activeNote = {};
   }
-
   deleteNote(note.id).then(function() {
     getAndRenderNotes();
     renderActiveNote();
@@ -97,22 +90,17 @@ const handleRenderSaveBtn = function() {
 
 const renderNoteList = function(notes) {
   $noteList.empty();
-
   const noteListItems = [];
-
   for (let i = 0; i < notes.length; i++) {
     const note = notes[i];
-
     const $li = $("<li class='list-group-item'>").data(note);
     const $span = $('<span>').text(note.title);
     const $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
-
     $li.append($span, $delBtn);
     noteListItems.push($li);
   }
-
   $noteList.append(noteListItems);
 };
 
@@ -130,5 +118,3 @@ $noteTitle.on('keyup', handleRenderSaveBtn);
 $noteText.on('keyup', handleRenderSaveBtn);
 
 getAndRenderNotes();
-
-
