@@ -42,7 +42,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 •installation completed!
 ```
 ## Usage
-![screenshot](public\assets\images\screenshot.png)
+<img src="public\assets\images\screenshot.png" />
 
 ## License
 MIT License
@@ -76,4 +76,3 @@ https://tfletchnote-taker.herokuapp.com/
 
 Visit this repo:
 https://github.com/tfletch3018/Note-Taker
-
