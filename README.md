@@ -71,8 +71,6 @@ SOFTWARE.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
-Visit this deployed application on Heroku:
-https://tfletchnote-taker.herokuapp.com/
+[Visit this deployed application on Heroku:](https://tfletchnote-taker.herokuapp.com/)
 
-Visit this repo:
-https://github.com/tfletch3018/Note-Taker
+[Visit this repo:](https://github.com/tfletch3018/Note-Taker)
